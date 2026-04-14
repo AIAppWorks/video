@@ -5,7 +5,7 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-white mb-1">VideoSaaS</h1>
+          <h1 className="text-2xl font-bold text-white mb-1">Video.AiAppWorks.cn</h1>
           <p className="text-slate-400 text-sm">登录你的账号</p>
         </div>
         <LoginForm />

@@ -115,27 +115,27 @@ export function PropsEditorPanel({ template, values, onChange }: PropsEditorPane
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-2">
       {['content', 'style', 'animation'].map((group) => {
         const fields = grouped[group];
         if (!fields?.length) return null;
         const isOpen = openGroups[group];
 
         return (
-          <div key={group} className="bg-slate-800 rounded-lg overflow-hidden border border-slate-700">
+          <div key={group} className="bg-slate-800/60 rounded-md overflow-hidden border border-slate-700/60">
             {/* 分组标题 */}
             <button
               onClick={() => toggleGroup(group)}
-              className="w-full flex items-center justify-between px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-750 transition-colors"
+              className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-slate-300 hover:bg-slate-700/40 transition-colors"
             >
               <span>{GROUP_LABELS[group] ?? group}</span>
-              <span className="text-slate-500 text-xs">{isOpen ? '▲' : '▼'}</span>
+              <span className="text-slate-500 text-[10px]">{isOpen ? '▲' : '▼'}</span>
             </button>
 
             {/* 字段列表 */}
             {isOpen && (
-              <div className="px-4 pb-4 flex flex-col gap-4 border-t border-slate-700">
-                <div className="pt-3 flex flex-col gap-4">
+              <div className="px-3 pb-3 flex flex-col gap-3 border-t border-slate-700/60">
+                <div className="pt-2 flex flex-col gap-3">
                   {fields.map(([key, meta]) =>
                     renderControl(key, meta, values[key], (v) => handleFieldChange(key, v))
                   )}

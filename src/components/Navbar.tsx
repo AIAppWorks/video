@@ -7,7 +7,7 @@ export async function Navbar({ activePage }: { activePage?: 'gallery' | 'my-vide
 
   return (
     <header className="border-b border-slate-800 px-8 py-4 flex items-center justify-between">
-      <Link href="/" className="text-xl font-bold text-white">VideoSaaS</Link>
+      <Link href="/" className="text-xl font-bold text-white">Video.AiAppWorks.cn</Link>
       <nav className="flex items-center gap-6 text-sm text-slate-400">
         <Link href="/" className={activePage === 'gallery' ? 'text-white font-medium' : 'hover:text-white transition-colors'}>
           模板

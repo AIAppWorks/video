@@ -19,14 +19,14 @@ export function TextControl({ label, value, onChange, description, multiline }: 
           value={value}
           onChange={(e) => onChange(e.target.value)}
           rows={3}
-          className="bg-slate-900 border border-slate-700 rounded-md px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500 resize-none"
+          className="bg-slate-900 border border-slate-700 rounded-md px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500 resize-none"
         />
       ) : (
         <input
           type="text"
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="bg-slate-900 border border-slate-700 rounded-md px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500"
+          className="bg-slate-900 border border-slate-700 rounded-md px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500"
         />
       )}
       {description && <p className="text-xs text-slate-500">{description}</p>}

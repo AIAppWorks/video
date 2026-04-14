@@ -33,7 +33,7 @@ type MetricShowcaseProps = z.infer<typeof MetricShowcasePropsSchema>;
  *   100– 150 : 上下文说明滑入
  *
  * 总长 150 帧 @ 30fps = 5 秒
- * 规格：1080x1080（方形，适合社交媒体）
+ * 规格：1280x720（16:9 横版）
  */
 export const MetricShowcase: React.FC<MetricShowcaseProps> = ({
   brandName,

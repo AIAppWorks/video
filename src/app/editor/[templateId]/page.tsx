@@ -17,7 +17,7 @@ export default async function EditorPage({ params }: EditorPageProps) {
   const isLoggedIn = !!session?.user?.id;
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="h-screen flex flex-col overflow-hidden">
       <header className="border-b border-slate-800 px-6 py-3 flex items-center justify-between flex-shrink-0">
         <div className="flex items-center gap-4">
           <Link href="/" className="text-slate-400 hover:text-white transition-colors text-sm">

@@ -105,17 +105,17 @@ export function EditorClient({ templateId, isLoggedIn = false }: EditorClientPro
   const isRendering = renderStatus === 'submitting' || renderStatus === 'rendering';
 
   return (
-    <div className="flex flex-1 h-[calc(100vh-57px)]">
+    <div className="flex flex-1 overflow-hidden min-h-0">
       {/* 左侧：Props 编辑面板 */}
-      <aside className="w-80 flex-shrink-0 border-r border-slate-800 overflow-y-auto">
-        <div className="p-4">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-sm font-semibold text-slate-300">编辑属性</h2>
+      <aside className="w-72 flex-shrink-0 border-r border-slate-800 overflow-y-auto scrollbar-thin">
+        <div className="p-3">
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider">编辑属性</h2>
             <button
               onClick={() => setProps(template.defaultProps as Record<string, unknown>)}
-              className="text-xs text-slate-500 hover:text-slate-300 transition-colors"
+              className="text-xs text-slate-600 hover:text-slate-300 transition-colors"
             >
-              重置默认值
+              重置
             </button>
           </div>
           <PropsEditorPanel template={template} values={props} onChange={handlePropsChange} />
@@ -123,20 +123,23 @@ export function EditorClient({ templateId, isLoggedIn = false }: EditorClientPro
       </aside>
 
       {/* 右侧：预览 + 导出 */}
-      <main className="flex-1 flex flex-col items-center justify-center gap-6 bg-slate-950 p-8 overflow-auto">
+      <main className="flex-1 flex flex-col items-center justify-center gap-4 bg-slate-950 p-6 overflow-y-auto scrollbar-thin">
         {/* Player 预览 */}
-        <div className="w-full max-w-3xl">
-          <Player
-            component={template.component as React.ComponentType<Record<string, unknown>>}
-            inputProps={props}
-            durationInFrames={template.composition.durationInFrames}
-            fps={template.composition.fps}
-            compositionWidth={template.composition.width}
-            compositionHeight={template.composition.height}
-            style={{ width: '100%', borderRadius: '8px', overflow: 'hidden' }}
-            controls
-            loop
-          />
+        <div className="w-full max-w-2xl">
+          <div className="rounded-lg overflow-hidden"
+            style={{ background: 'repeating-conic-gradient(#1e293b 0% 25%, #0f172a 0% 50%) 0 0 / 16px 16px' }}>
+            <Player
+              component={template.component as React.ComponentType<Record<string, unknown>>}
+              inputProps={props}
+              durationInFrames={template.composition.durationInFrames}
+              fps={template.composition.fps}
+              compositionWidth={template.composition.width}
+              compositionHeight={template.composition.height}
+              style={{ width: '100%', display: 'block' }}
+              controls
+              loop
+            />
+          </div>
         </div>
 
         {/* 视频规格 */}

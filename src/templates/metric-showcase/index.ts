@@ -5,7 +5,7 @@ import { MetricShowcase, MetricShowcasePropsSchema } from './MetricShowcase';
 const metricShowcase: VideoTemplate<typeof MetricShowcasePropsSchema> = {
   id: 'metric-showcase',
   name: '单指标展示',
-  description: '高亮展示单个 KPI 指标，含品牌名、计数动画和上下文说明，适合社交媒体方形格式',
+  description: '高亮展示单个 KPI 指标，含品牌名、计数动画和上下文说明，16:9 横版格式',
   tags: ['指标', 'KPI', '数据', '社交媒体'],
   thumbnail: '/thumbnails/metric-showcase.png',
 
@@ -54,8 +54,8 @@ const metricShowcase: VideoTemplate<typeof MetricShowcasePropsSchema> = {
   component: MetricShowcase,
 
   composition: {
-    width: 1080,
-    height: 1080,
+    width: 1280,
+    height: 720,
     fps: 30,
     durationInFrames: 150,
   },

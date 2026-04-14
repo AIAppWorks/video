@@ -26,7 +26,7 @@ export function NumberControl({ label, value, onChange, description, min, max, s
           const num = parseFloat(e.target.value);
           if (!isNaN(num)) onChange(num);
         }}
-        className="bg-slate-900 border border-slate-700 rounded-md px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500"
+        className="bg-slate-900 border border-slate-700 rounded-md px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500"
       />
       {description && <p className="text-xs text-slate-500">{description}</p>}
     </div>

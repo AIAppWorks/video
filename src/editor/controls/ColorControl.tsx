@@ -18,13 +18,13 @@ export function ColorControl({ label, value, onChange, description }: ColorContr
           type="color"
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="w-9 h-9 rounded-md border border-slate-700 bg-slate-900 cursor-pointer p-0.5"
+          className="w-7 h-7 rounded border border-slate-700 bg-slate-900 cursor-pointer p-0.5 flex-shrink-0"
         />
         <input
           type="text"
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="flex-1 bg-slate-900 border border-slate-700 rounded-md px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500 font-mono"
+          className="flex-1 bg-slate-900 border border-slate-700 rounded-md px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500 font-mono"
           placeholder="#000000"
         />
       </div>
