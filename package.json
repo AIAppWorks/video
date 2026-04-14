@@ -1,0 +1,41 @@
+{
+  "name": "video",
+  "version": "1.0.0",
+  "description": "数据驱动的增长叙事视频生成器",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "studio": "remotion studio",
+    "render": "remotion render src/index.ts video out/video.mp4 --binaries-directory $PWD/remotion-hybrid-bin --muted --overwrite --codec=h264 --crf=23 --image-format=jpeg",
+    "prepare:bin": "bash scripts/prepare-hybrid-bin.sh",
+    "upgrade": "remotion upgrade",
+    "build": "prisma generate && next build",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@auth/prisma-adapter": "^2.11.1",
+    "@prisma/client": "^5.22.0",
+    "@remotion/cli": "^4.0.0",
+    "@remotion/player": "^4.0.448",
+    "@remotion/tailwind": "^4.0.0",
+    "bcryptjs": "^3.0.3",
+    "next": "^15.3.9",
+    "next-auth": "^5.0.0-beta.30",
+    "prisma": "^5.22.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^25.6.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.0"
+  }
+}

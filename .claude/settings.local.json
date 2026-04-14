@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(grep -E '\\\\.\\(md|txt|yml|yaml|env\\)$|README|LICENSE|CHANGELOG')",
+      "Bash(git:*)",
+      "Bash(npx remotion:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3123/)",
+      "Bash(curl -s http://localhost:3123/api/compositions)",
+      "Bash(curl -s http://localhost:3123/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3002/editor/metric-showcase)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3002/editor/before-after)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3002/my-videos)",
+      "Bash(ffmpeg -version)",
+      "Bash(chmod +x:*)",
+      "Bash(curl -s \"http://localhost:3002/api/render?jobId=1776099844070-ekoeig\")",
+      "Bash(psql --version)",
+      "Bash(sqlite3 --version)",
+      "Bash(curl:*)",
+      "Bash(ls /Users/www1/code/project/docs/video-saas/postcss.config*)",
+      "Bash(cp /Users/www1/.claude/projects/-Users-www1-code-project-docs-video-saas/memory/MEMORY.md /Users/www1/code/project/docs/video-saas/doc/MEMORY.md)",
+      "Bash(cp /Users/www1/.claude/projects/-Users-www1-code-project-docs-video-saas/memory/feedback_render_macos.md /Users/www1/code/project/docs/video-saas/doc/)",
+      "Bash(cp /Users/www1/.claude/projects/-Users-www1-code-project-docs-video-saas/memory/project_*.md /Users/www1/code/project/docs/video-saas/doc/)",
+      "Bash(ls -la /Users/www1/code/project/docs/video-saas/doc/*.md)",
+      "Bash(mkdir -p /Users/www1/code/project/docs/video-saas/doc)",
+      "Bash(cp /Users/www1/.claude/projects/-Users-www1-code-project-docs-video-saas/memory/*.md /Users/www1/code/project/docs/video-saas/doc/)",
+      "Bash(npm show:*)",
+      "Bash(npx prisma:*)",
+      "Bash(cat /Users/www1/code/project/docs/video/prisma/migrations/*/migration.sql)"
+    ]
+  }
+}

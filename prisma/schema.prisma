@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String      @id @default(cuid())
+  email        String      @unique
+  passwordHash String
+  name         String?
+  createdAt    DateTime    @default(now())
+  renders      RenderJob[]
+}
+
+model RenderJob {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  templateId  String
+  props       String
+  status      String    @default("queued")
+  progress    Int       @default(0)
+  outputPath  String?
+  error       String?
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+}

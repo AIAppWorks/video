@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+public/renders
+remotion-hybrid-bin
+.env
+.env.local
+.env.*.local
+prisma/dev.db
+
+/src/generated/prisma
