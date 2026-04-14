@@ -32,9 +32,9 @@ log() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a "$LOG_FILE"
 }
 
-# 第一步：git pull
-log "${GREEN}[1/4] 拉取最新代码...${NC}"
-if git pull; then
+# 第一步：切换到main分支并拉取最新代码
+log "${GREEN}[1/4] 切换到main分支并拉取最新代码...${NC}"
+if git checkout main && git pull origin main; then
     log "${GREEN}✓ 代码拉取成功${NC}"
 else
     log "${RED}✗ 代码拉取失败${NC}"
