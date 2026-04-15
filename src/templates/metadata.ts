@@ -41,6 +41,14 @@ const allMetadata: TemplateMetadata[] = [
     thumbnail: '/thumbnails/before-after.png',
     composition: { width: 1280, height: 720, fps: 30, durationInFrames: 180 },
   },
+  {
+    id: 'model-names',
+    name: 'AI 模型命名溯源',
+    description: '6 个场景解读 Anthropic AI 模型命名（Opus/Sonnet/Haiku/Mythos）的文化内涵',
+    tags: ['教育', 'AI', 'Anthropic', '文化', '命名'],
+    thumbnail: '/thumbnails/model-names.png',
+    composition: { width: 1280, height: 720, fps: 30, durationInFrames: 180 },
+  },
 ];
 
 export function getAllTemplateMetadata(): TemplateMetadata[] {

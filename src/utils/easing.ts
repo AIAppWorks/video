@@ -23,6 +23,8 @@ export const easeOutElastic = (t: number): number => {
   return Math.pow(2, -10 * t) * Math.sin((t * 10 - 0.75) * c4) + 1;
 };
 
+export const clamp01 = (t: number): number => Math.max(0, Math.min(1, t));
+
 export const easeOutBounce = (t: number): number => {
   const n1 = 7.5625;
   const d1 = 2.75;

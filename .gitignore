@@ -6,6 +6,6 @@ remotion-hybrid-bin
 .env
 .env.local
 .env.*.local
-prisma/dev.db
+prisma/*.db
 
 /src/generated/prisma

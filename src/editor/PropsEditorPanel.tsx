@@ -6,6 +6,7 @@ import { TextControl } from './controls/TextControl';
 import { NumberControl } from './controls/NumberControl';
 import { ColorControl } from './controls/ColorControl';
 import { SliderControl } from './controls/SliderControl';
+import { SelectControl } from './controls/SelectControl';
 
 interface PropsEditorPanelProps {
   template: VideoTemplate;
@@ -28,6 +29,17 @@ function renderControl(
   const control = meta.control ?? (typeof value === 'number' ? 'number' : 'text');
 
   switch (control) {
+    case 'select':
+      return (
+        <SelectControl
+          key={key}
+          label={meta.label}
+          value={value as string | number}
+          onChange={onChange as (v: string | number) => void}
+          options={meta.options ?? []}
+          description={meta.description}
+        />
+      );
     case 'color':
       return (
         <ColorControl

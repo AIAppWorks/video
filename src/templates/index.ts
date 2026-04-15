@@ -2,3 +2,4 @@
 import './growth-video-lite';
 import './metric-showcase';
 import './before-after';
+import './model-names';
