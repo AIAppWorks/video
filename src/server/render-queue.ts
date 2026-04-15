@@ -85,31 +85,55 @@ export function startRender(
     `--props=${propsJson}`,
   ];
 
+  console.log(`[Render ${jobId}] Starting render for template: ${templateId}`);
+  console.log(`[Render ${jobId}] Output file: ${outputFile}`);
+  console.log(`[Render ${jobId}] Command: npx ${args.join(' ')}`);
+
   const child = spawn('npx', args, {
     cwd: ROOT,
-    env: { ...process.env, PATH: process.env.PATH },
+    env: {
+      ...process.env,
+      PATH: `${HYBRID_BIN}:${process.env.PATH}`,
+      REMOTION_CHROMIUM_CACHE_DIR: HYBRID_BIN,
+    },
+    stdio: ['ignore', 'pipe', 'pipe'],
   });
 
+  let allOutput = '';
   child.stdout.on('data', (data: Buffer) => {
     const text = data.toString();
+    allOutput += text;
+    console.log(`[Render ${jobId}] stdout:`, text.trim());
+
+    // 尝试多种进度格式
     const match = text.match(/Rendered\s+(\d+)\/(\d+)/);
     if (match) {
       job.progress = Math.round((parseInt(match[1]) / parseInt(match[2])) * 90);
+      console.log(`[Render ${jobId}] Progress updated: ${job.progress}%`);
     }
     const encMatch = text.match(/Encoded\s+(\d+)\/(\d+)/);
     if (encMatch) {
       job.progress = 90 + Math.round((parseInt(encMatch[1]) / parseInt(encMatch[2])) * 10);
+      console.log(`[Render ${jobId}] Encoding progress: ${job.progress}%`);
     }
   });
 
   let stderr = '';
-  child.stderr.on('data', (data: Buffer) => { stderr += data.toString(); });
+  child.stderr.on('data', (data: Buffer) => {
+    const errText = data.toString();
+    stderr += errText;
+    console.error(`[Render ${jobId}] stderr:`, errText.trim());
+  });
 
   child.on('close', (code) => {
+    console.log(`[Render ${jobId}] Process closed with code: ${code}`);
+    console.log(`[Render ${jobId}] Total stdout output length: ${allOutput.length} chars`);
+
     if (code === 0) {
       job.status = 'completed';
       job.progress = 100;
       job.outputPath = `/renders/${jobId}.mp4`;
+      console.log(`[Render ${jobId}] Render completed successfully`);
       prisma.renderJob.update({
         where: { id: jobId },
         data: { status: 'completed', progress: 100, outputPath: job.outputPath, completedAt: new Date() },
@@ -117,6 +141,7 @@ export function startRender(
     } else {
       job.status = 'failed';
       job.error = stderr.slice(-500) || `Exit code ${code}`;
+      console.error(`[Render ${jobId}] Render failed: ${job.error}`);
       prisma.renderJob.update({
         where: { id: jobId },
         data: { status: 'failed', error: job.error },
@@ -127,6 +152,7 @@ export function startRender(
   child.on('error', (err) => {
     job.status = 'failed';
     job.error = err.message;
+    console.error(`[Render ${jobId}] Process error: ${err.message}`);
     prisma.renderJob.update({
       where: { id: jobId },
       data: { status: 'failed', error: err.message },

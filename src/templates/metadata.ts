@@ -18,6 +18,14 @@ export interface TemplateMetadata {
 
 const allMetadata: TemplateMetadata[] = [
   {
+    id: 'model-names',
+    name: 'AI 模型命名溯源',
+    description: '6 个场景解读 Anthropic AI 模型命名（Opus/Sonnet/Haiku/Mythos）的文化内涵',
+    tags: ['教育', 'AI', 'Anthropic', '文化', '命名'],
+    thumbnail: '/thumbnails/model-names.png',
+    composition: { width: 1280, height: 720, fps: 30, durationInFrames: 180 },
+  },
+  {
     id: 'growth-video-lite',
     name: '数据增长叙事',
     description: '展示两组数据的对比增长，含计数动画、柱状图和增长倍率',
@@ -39,14 +47,6 @@ const allMetadata: TemplateMetadata[] = [
     description: '左右分屏对比展示变化前后的差异，分割线动态滑入揭示效果',
     tags: ['对比', '前后', '改进', '展示'],
     thumbnail: '/thumbnails/before-after.png',
-    composition: { width: 1280, height: 720, fps: 30, durationInFrames: 180 },
-  },
-  {
-    id: 'model-names',
-    name: 'AI 模型命名溯源',
-    description: '6 个场景解读 Anthropic AI 模型命名（Opus/Sonnet/Haiku/Mythos）的文化内涵',
-    tags: ['教育', 'AI', 'Anthropic', '文化', '命名'],
-    thumbnail: '/thumbnails/model-names.png',
     composition: { width: 1280, height: 720, fps: 30, durationInFrames: 180 },
   },
 ];

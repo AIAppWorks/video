@@ -4,7 +4,6 @@
   "description": "数据驱动的增长叙事视频生成器",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
     "studio": "remotion studio",
     "render": "remotion render src/index.ts video out/video.mp4 --binaries-directory $PWD/remotion-hybrid-bin --muted --overwrite --codec=h264 --crf=23 --image-format=jpeg",

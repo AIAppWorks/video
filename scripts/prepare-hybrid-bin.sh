@@ -17,6 +17,23 @@ rm -rf "$HYBRID"
 mkdir -p "$HYBRID"
 cp "$COMPOSITOR/remotion" "$HYBRID/"
 cp "$COMPOSITOR"/*.dylib "$HYBRID/"
-ln -sf "$(realpath "$FFMPEG")" "$HYBRID/ffmpeg"
-ln -sf "$(realpath "$FFPROBE")" "$HYBRID/ffprobe"
+cp "$COMPOSITOR/ffmpeg" "$HYBRID/ffmpeg"
+cp "$COMPOSITOR/ffprobe" "$HYBRID/ffprobe"
+chmod +x "$HYBRID/ffmpeg" "$HYBRID/ffprobe"
+
+# 尝试复制 Chrome Headless Shell（如果存在）
+CHROME_SOURCES=(
+  "$ROOT/node_modules/.remotion/chrome-headless-shell"
+  "$HOME/.remotion/chrome-headless-shell"
+)
+
+for CHROME_SOURCE in "${CHROME_SOURCES[@]}"; do
+  if [[ -d "$CHROME_SOURCE" ]]; then
+    echo "Found Chrome at: $CHROME_SOURCE"
+    cp -r "$CHROME_SOURCE" "$HYBRID/" || true
+    echo "Copied Chrome to: $HYBRID/chrome-headless-shell"
+    break
+  fi
+done
+
 echo "OK: $HYBRID"

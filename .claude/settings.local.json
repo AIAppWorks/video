@@ -27,7 +27,21 @@
       "Bash(cp /Users/www1/.claude/projects/-Users-www1-code-project-docs-video-saas/memory/*.md /Users/www1/code/project/docs/video-saas/doc/)",
       "Bash(npm show:*)",
       "Bash(npx prisma:*)",
-      "Bash(cat /Users/www1/code/project/docs/video/prisma/migrations/*/migration.sql)"
+      "Bash(cat /Users/www1/code/project/docs/video/prisma/migrations/*/migration.sql)",
+      "Bash(cp /Users/www1/Downloads/aiappworks_avatar_minimalist.png /Users/www1/code/project/docs/video/public/favicon.ico)",
+      "Bash(cp /Users/www1/Downloads/aiappworks_avatar_minimalist.png /Users/www1/code/project/docs/video/public/aiappworks-avatar.png)",
+      "Bash(sqlite3 /Users/www1/code/project/docs/video/prisma/dev.db \".tables\")",
+      "Bash(REMOTION_CHROMIUM_CACHE_DIR=./remotion-hybrid-bin npx remotion:*)",
+      "Bash(npm --version)",
+      "Bash(command -v nvm)",
+      "Bash(unzip -q chrome-headless-shell-mac-x64.zip)",
+      "Bash(ln -sf chrome-headless-shell-mac-x64/chrome-headless-shell chrome-headless-shell)",
+      "Bash(rm ffmpeg:*)",
+      "Bash(cp /usr/local/bin/ffmpeg .)",
+      "Bash(cp /usr/local/bin/ffprobe .)",
+      "Bash(ldd remotion-hybrid-bin/ffmpeg)",
+      "Bash(./remotion-hybrid-bin/ffmpeg -version)",
+      "Bash(ls -lah remotion-hybrid-bin/ff*)"
     ]
   }
 }
