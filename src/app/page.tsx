@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getAllTemplateMetadata } from '@/templates/metadata';
 import { Navbar } from '@/components/Navbar';
 
@@ -21,8 +22,15 @@ export default function HomePage() {
               href={`/editor/${template.id}`}
               className="group block bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-indigo-500 transition-all hover:shadow-lg hover:shadow-indigo-500/10"
             >
-              <div className="aspect-video bg-slate-900 flex items-center justify-center relative overflow-hidden">
-                <div className="text-slate-600 text-sm">预览图</div>
+              <div className="relative overflow-hidden bg-slate-900">
+                <Image
+                  src={template.thumbnail}
+                  alt={template.name}
+                  width={template.composition.width}
+                  height={template.composition.height}
+                  className="w-full h-auto object-cover"
+                  priority={false}
+                />
                 <div className="absolute top-3 right-3 flex gap-2">
                   <span className="bg-slate-800/90 text-slate-300 text-xs px-2 py-0.5 rounded">
                     {template.composition.width}×{template.composition.height}

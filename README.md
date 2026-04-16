@@ -201,3 +201,9 @@ npm run render:scene -- 5   # Scene5 - Mythos 详解
 npm run render:scene -- 6   # Scene6 - 总结
 npm run render:scene -- 7   # Scene7 - Mythos 预告
 ```
+渲染其他图
+```
+npx remotion still src/index.ts metric-showcase out/metric-showcase/img/1.jpg \
+  --frame=179 \
+  --jpeg-quality=90
+```
