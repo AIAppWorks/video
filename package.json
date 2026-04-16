@@ -7,7 +7,7 @@
     "start": "next start",
     "studio": "remotion studio",
     "render": "remotion render src/index.ts video out/video.mp4 --binaries-directory $PWD/remotion-hybrid-bin --muted --overwrite --codec=h264 --crf=23 --image-format=jpeg",
-    "render:scene": "bash scripts/render-scene.sh"
+    "render:scene": "bash scripts/render-scene.sh",
     "prepare:bin": "bash scripts/prepare-hybrid-bin.sh",
     "upgrade": "remotion upgrade",
     "build": "prisma generate && next build",
