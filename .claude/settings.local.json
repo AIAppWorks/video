@@ -41,7 +41,12 @@
       "Bash(cp /usr/local/bin/ffprobe .)",
       "Bash(ldd remotion-hybrid-bin/ffmpeg)",
       "Bash(./remotion-hybrid-bin/ffmpeg -version)",
-      "Bash(ls -lah remotion-hybrid-bin/ff*)"
+      "Bash(ls -lah remotion-hybrid-bin/ff*)",
+      "Bash(ffprobe -version)",
+      "Bash(node:*)",
+      "Bash(brew --version)",
+      "Bash(brew list:*)",
+      "Bash(bash:*)"
     ]
   }
 }

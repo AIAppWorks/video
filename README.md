@@ -185,3 +185,19 @@ npm run start
 - SQLite 是单文件数据库，适合单机/低并发场景。高并发生产环境建议替换为 PostgreSQL，修改 `prisma/schema.prisma` 中的 `provider = "postgresql"` 并更新 `DATABASE_URL` 即可。
 - 渲染输出文件默认写入 `out/` 目录，部署时确保该目录有写入权限。
 - `AUTH_SECRET` 在生产环境必须使用随机值，否则 JWT 存在安全风险。
+
+
+
+## 模板渲染（model-names）
+
+单场景导出，传入场景编号（1-7），输出到 `out/` 目录：
+
+```bash
+npm run render:scene -- 1   # Scene1 - 开场
+npm run render:scene -- 2   # Scene2 - Opus
+npm run render:scene -- 3   # Scene3 - Sonnet
+npm run render:scene -- 4   # Scene4 - Haiku
+npm run render:scene -- 5   # Scene5 - Mythos 详解
+npm run render:scene -- 6   # Scene6 - 总结
+npm run render:scene -- 7   # Scene7 - Mythos 预告
+```

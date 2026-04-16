@@ -17,9 +17,13 @@ rm -rf "$HYBRID"
 mkdir -p "$HYBRID"
 cp "$COMPOSITOR/remotion" "$HYBRID/"
 cp "$COMPOSITOR"/*.dylib "$HYBRID/"
-cp "$COMPOSITOR/ffmpeg" "$HYBRID/ffmpeg"
-cp "$COMPOSITOR/ffprobe" "$HYBRID/ffprobe"
-chmod +x "$HYBRID/ffmpeg" "$HYBRID/ffprobe"
+ln -sf "$FFMPEG" "$HYBRID/ffmpeg"
+ln -sf "$FFPROBE" "$HYBRID/ffprobe"
+
+# Remotion 的音频预处理（create-silent-audio）会绕过 --binaries-directory，
+# 直接调用 compositor 目录的 ffmpeg，因此也需要替换。
+ln -sf "$FFMPEG" "$COMPOSITOR/ffmpeg"
+ln -sf "$FFPROBE" "$COMPOSITOR/ffprobe"
 
 # 尝试复制 Chrome Headless Shell（如果存在）
 CHROME_SOURCES=(

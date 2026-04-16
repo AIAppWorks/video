@@ -9,3 +9,5 @@ remotion-hybrid-bin
 prisma/*.db
 
 /src/generated/prisma
+.claude/*
+.cursor/*
