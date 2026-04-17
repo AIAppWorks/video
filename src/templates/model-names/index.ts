@@ -18,28 +18,28 @@ const modelNames: VideoTemplate<typeof ModelNamesPropsSchema> = {
     s1Subtitle: '经典文学与艺术形式',
 
     // Scene 2
-    s2ModelName: 'OPUS',
+    s2ModelName: 'OPUS（作品）',
     s2Origin: '源自拉丁语 · 作品',
     s2Detail1: 'Op.67 · 第五交响曲',
     s2Detail2: 'Op.27 · 月光奏鸣曲',
     s2Tagline: '最完整、复杂、有分量的顶级创作',
 
     // Scene 3
-    s3ModelName: 'SONNET',
+    s3ModelName: 'SONNET（十四行诗）',
     s3Origin: '固定14行 · 押韵 · 结构严谨',
     s3Detail1: '莎士比亚 · 154 首十四行诗',
     s3Detail2: '戴着镣铐跳舞',
     s3Tagline: '可控约束下的稳定优雅表达',
 
     // Scene 4
-    s4ModelName: 'HAIKU',
+    s4ModelName: 'HAIKU（俳句）',
     s4Origin: '5 - 7 - 5  音节结构',
     s4Detail1: '松尾芭蕉',
-    s4Detail2: '古池や蛙飛び込む水の音',
+    s4Detail2: '古池幽寂，蛙跃入，水音起',
     s4Tagline: '极致的压缩与高效',
 
     // Scene 5 - Mythos Detail
-    s5mModelName: 'MYTHOS',
+    s5mModelName: 'MYTHOS（神话）',
     s5mOrigin: '源自古希腊语 · 神话 / 叙事 / 世界观',
     s5mDetail1: '不再局限于某一种文体，而是指向人类文明最底层的故事体系与精神范式',
     s5mDetail2: '神话是用来解释世界、构建文明、承载集体想象的存在，不受既有格式束缚',
@@ -52,7 +52,7 @@ const modelNames: VideoTemplate<typeof ModelNamesPropsSchema> = {
     s6HaikuLine: '快速高效的轻量化回应',
 
     // Scene 7 - Mythos Teaser
-    s7ModelName: 'MYTHOS',
+    s7ModelName: 'MYTHOS（神话）',
     s7Origin: '古希腊语 · 神话 / 世界观',
     s7Tagline: '全新维度 · 令人期待',
 
